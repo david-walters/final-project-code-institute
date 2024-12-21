@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <h2 class="gold-1 cinzel-bold">{{ perfume.name }}</h2>
             <p class="gold-2">{{ perfume.description }}</p>
-            <form>
+            <form method="POST" action="{% url 'add_to_cart' perfume.id %}">
                 {% csrf_token %}
                 <!-- Size Selector -->
                 <div class="d-flex">
