@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'cart',
+    'finalise_purchase',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'index'
+
+# Stripe
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
