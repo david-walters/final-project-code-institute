@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container cart-page text-center">
+    <h1 class="gold-1 cinzel-regular mb-5">Your Shopping Cart</h1>
+
+    {% if cart_items %}
+    <ul class="list-unstyled">
+        {% for item in cart_items %}
+        <li class="cart-item d-flex align-items-center justify-content-center flex-column mb-4">
+            <img src="{{ item.perfume.image.url }}" alt="{{ item.perfume.name }}" class="cart-image mb-3">
+            <p class="gold-2">{{ item.perfume.name }}</p>
+            <p class="gold-2">Size: {{ item.size }}</p>
+            <p class="gold-2">Quantity: {{ item.quantity }}</p>
+            <p class="gold-2">Price: £{{ item.total_price }}</p>
+            <form action="{% url 'remove_from_cart' item.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-gold">Remove</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="gold-2 font-increase">Your cart is empty.</p>
+    {% endif %}
+</div>
+<hr>
+
+<div class="cart-page mb-5" id="make-purchase">
+    <p class="gold-1 font-increase pb-2">Total Cart Price: <strong>£{{ total_cart_price }}</strong></p>
+    <a href="" class="btn btn-gold">Finalise Purchase</a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartItems = document.querySelectorAll('.cart-item');
+        const finalisePurchaseDiv = document.getElementById('make-purchase');
+        if (cartItems.length === 0) {
+            finalisePurchaseDiv.classList.add('hide')
+        } else {
+            finalisePurchaseDiv.classList.remove('hide');
+        }
+    });
+</script>
+
+{% endblock %}
