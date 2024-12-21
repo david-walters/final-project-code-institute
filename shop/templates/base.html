@@ -40,6 +40,7 @@
                         {% csrf_token %}
                         <button type="submit" class="btn gold-2">Logout</button>
                     </form>
+                    <a class="form-inline mr-3" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
                     {% else %}
                     <a class="nav-item nav-link {% if request.path == '/login/' %}active{% endif %}"
                         href="{% url 'login' %}">
