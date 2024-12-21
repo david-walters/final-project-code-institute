@@ -15,7 +15,7 @@ Cass Galaar - Home
         <div class="row">
             {% for perfume in perfumes %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <a class="perfume-card" href="{% url 'index' %}">
+                <a class="perfume-card" href="{% url 'perfume_detail' perfume.id %}">
                     <div class="card card-hover h-100">
                         <img src="{{ perfume.image.url }}" class="card-img-top" alt="{{ perfume.name }}">
                         <div class="card-body">

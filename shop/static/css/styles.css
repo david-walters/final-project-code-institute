@@ -126,3 +126,18 @@ body {
     box-shadow: 0px 0px 2px 0.5px rgb(229, 185, 53);
     color: rgb(245, 245, 245);
     }
+
+    /* ------------- Perfume Details Page ------------- */
+
+    form select {
+    max-width: 100px;
+    margin-right: 60px;
+    }
+    
+    #quantity {
+        max-width: 65px;
+        }
+    
+    img {
+    border-radius: 5px;
+    }
