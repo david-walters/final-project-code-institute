@@ -26,3 +26,7 @@ def register(request):
 def perfume_detail(request, pk):
     perfume = get_object_or_404(Perfume, pk=pk)
     return render(request, 'perfume_detail.html', {'perfume': perfume})
+
+@login_required
+def cart(request):
+    return render(request, 'cart.html')
