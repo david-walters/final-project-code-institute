@@ -176,3 +176,21 @@ body {
 .cart-item p:first-of-type {
     font-size: 1.3rem;
 }
+
+/* ------------- Media Queries ------------- */
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3rem; 
+    }
+    .bi-cart {
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 350px) {
+    h1 {
+        font-size: 2.3rem; 
+    }
+}
