@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 from .forms import UserRegisterForm
 from .models import Perfume
 
@@ -14,12 +15,15 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            login(request, user)
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('login')
+
+            return redirect('delivery_address')
     else:
         form = UserRegisterForm()
+
     return render(request, 'register.html', {'form': form})
 
 @login_required
