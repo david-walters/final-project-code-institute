@@ -35,23 +35,29 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">—<br>—<br>—</span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">
+                    {% if user.is_authenticated %}
+                    <a class="nav-item nav-link ml-2 {% if request.path == '/edit_delivery_address/' %}active{% endif %}"
+                        href="{% url 'edit_delivery_address' %}">
+                        Delivery-Address
+                    </a>
+                    <a class="nav-item nav-link ml-2 {% if request.path == '/' %}active{% endif %}"
+                        href="{% url 'index' %}">
                         Home {% if request.path == '/' %}<span class="sr-only">(current)</span>{% endif %}
                     </a>
-                    {% if user.is_authenticated %}
                     <form method="POST" action="{% url 'logout' %}" class="form-inline">
                         {% csrf_token %}
-                        <button type="submit" class="btn gold-2">Logout</button>
+                        <button type="submit" class="btn p-0 ml-2 gold-2">Logout</button>
                     </form>
-                    <a class="form-inline mr-3" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
+                    <a class="form-inline ml-2 mr-3" href="{% url 'cart' %}"><i class="bi bi-cart"></i></a>
                     {% else %}
-                    <a class="nav-item nav-link {% if request.path == '/login/' %}active{% endif %}"
+                    <a class="nav-item nav-link ml-2 {% if request.path == '/login/' %}active{% endif %}"
                         href="{% url 'login' %}">
                         Login
                     </a>
-                    <a class="nav-item nav-link {% if request.path == '/register/' %}active{% endif %}"
+                    <a class="nav-item nav-link ml-2 {% if request.path == '/register/' %}active{% endif %}"
                         href="{% url 'register' %}">
                         Register
                     </a>
