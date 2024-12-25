@@ -52,7 +52,7 @@ class Command(BaseCommand):
                 "name": "Sunkiss",
                 "size": "25 ml",
                 "description": "With every dab of this immersive fragrance, you’ll experience exotic floral notes, entwined with addictive cinnamon, sandalwood and spicy saffron accords.",
-                "image_url": "https://ibb.co/wJYh5rS",
+                "image_url": "http://ibb.co/wJYh5rS",
                 "gender": "F",
             },
             {
