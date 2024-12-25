@@ -8,7 +8,7 @@
     <ul class="list-unstyled">
         {% for item in cart_items %}
         <li class="cart-item d-flex align-items-center justify-content-center flex-column mb-4">
-            <img src="{{ item.perfume.image.url }}" alt="{{ item.perfume.name }}" class="cart-image mb-3">
+            <img src="{{ item.perfume.image_url.url }}" alt="{{ item.perfume.name }}" class="cart-image mb-3">
             <p class="gold-2">{{ item.perfume.name }}</p>
             <p class="gold-2">Size: {{ item.size }}</p>
             <p class="gold-2">Quantity: {{ item.quantity }}</p>

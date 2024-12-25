@@ -1,0 +1,1 @@
+web: gunicorn cass_galaar.wsgi
