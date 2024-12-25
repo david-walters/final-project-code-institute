@@ -20,7 +20,7 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
 
-            return redirect('delivery_address/delivery_address')
+            return redirect('delivery_address')
     else:
         form = UserRegisterForm()
 
