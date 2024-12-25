@@ -15,7 +15,7 @@ class Perfume(models.Model):
     size = models.CharField(max_length=10, choices=SIZE_CHOICES, default="25 ml")
     price = models.DecimalField(max_digits=10, decimal_places=2, editable=False, default=24.00)
     description = models.TextField()
-    image_url = models.URLField()
+    image_url = models.URLField(default="https://ibb.co/YLWps0V")
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
 
     def save(self, *args, **kwargs):
