@@ -1,10 +1,8 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from .models import DeliveryAddress
 from .forms import DeliveryAddressForm
 from django.contrib import messages 
 
-@login_required
 def delivery_address(request):
     if request.method == 'POST':
         form = DeliveryAddressForm(request.POST)
@@ -18,7 +16,6 @@ def delivery_address(request):
 
     return render(request, 'delivery_address/delivery_address.html', {'form': form})
 
-@login_required
 def edit_delivery_address(request):
     try:
         address = DeliveryAddress.objects.get(user=request.user)
