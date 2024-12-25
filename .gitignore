@@ -23,3 +23,6 @@ node_modules/
 build/
 dist/
 *.egg-info/
+
+# Virtual environment
+venv/
