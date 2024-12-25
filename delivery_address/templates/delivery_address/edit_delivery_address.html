@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}
 Edit Delivery Address
 {% endblock %}
@@ -76,4 +78,6 @@ Edit Delivery Address
         </div>
     </div>
 </section>
+
+<script src="{% static 'js/address.js' %}"></script>
 {% endblock %}
