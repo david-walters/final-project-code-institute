@@ -138,10 +138,11 @@ Wireframes were created using Figma.
 
 #### 1. Registration Table
 
-Table Name: Registration
+Table Name: Registration.
 Purpose: Stores user credentials and basic information.
 
-Key Fields:
+##### Key Fields:
+
 user_id: Unique identifier for each user (Primary Key).
 username: Unique username for the user.
 password: User's password.
@@ -149,10 +150,11 @@ email: Unique email address for user communication.
 
 #### 2. Perfumes Table
 
-Table Name: Perfumes
+Table Name: Perfumes.
 Purpose: Stores details about the perfumes available for sale.
 
-Key Fields:
+##### Key Fields:
+
 perfume_id: Unique identifier for each perfume (Primary Key).
 name: Name of the perfume.
 image_url: Link to the perfume's image.
@@ -161,10 +163,11 @@ price: Cost of the perfume.
 
 #### 3. Cart Table
 
-Table Name: Cart
+Table Name: Cart.
 Purpose: Represents the user's shopping cart, linking users with the perfumes they wish to purchase.
 
-Key Fields:
+##### Key Fields:
+
 Registration.user_id: Foreign Key referencing the Registration table.
 Perfumes.image_url, Perfumes.name, Perfumes.size, Perfumes.price: These fields are included to provide context about the items in the cart.
 quantity: Number of each perfume the user wishes to purchase.
@@ -172,10 +175,11 @@ total_price: Calculated total price based on the quantity and price of perfumes 
 
 #### 4. Payments Table (Stripe)
 
-Table Name: Payments
+Table Name: Payments.
 Purpose: Allows payment transactions processed through Stripe — allowing users to purchase the perfumes.
 
-Key Fields:
+##### Key Fields:
+
 Registration.user_id: Foreign Key referencing the Registration table, linking payments to users.
 Perfumes.name, Perfumes.price: Information about the perfume being purchased.
 Cart.quantity: The quantity of the perfume purchased.
@@ -183,10 +187,11 @@ Cart.total_price: Total price for the transaction.
 
 #### 5. Delivery Address Table
 
-Table Name: Delivery_address
+Table Name: Delivery_address.
 Purpose: Stores delivery information for users.
 
-Key Fields:
+##### Key Fields:
+
 Registration.user_id: Foreign Key referencing the Registration table, linking addresses to users.
 street_address: The street address for delivery.
 city: The city of the delivery address.
