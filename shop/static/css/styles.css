@@ -105,6 +105,8 @@ body {
     color: rgb(0, 0, 0) !important;
     text-decoration: none !important;
     }
+
+
     
     .card {
     border: none;
@@ -147,6 +149,8 @@ body {
     
     img {
     border-radius: 5px;
+    height: 50px;
+    width: auto;
     }
 
     /* ------------- Cart Page ------------- */
