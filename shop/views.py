@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm
 from .models import Perfume
 
@@ -25,6 +26,18 @@ def register(request):
         form = UserRegisterForm()
 
     return render(request, 'register.html', {'form': form})
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+        else:
+            messages.error(request, "Invalid username or password.")
+    return render(request, 'login.html', {"form": AuthenticationForm()})
 
 @login_required
 def perfume_detail(request, pk):
