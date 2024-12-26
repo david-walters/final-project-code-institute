@@ -31,6 +31,8 @@
     <a href="{% url 'finalise_purchase' %}" class="btn btn-gold">Finalise Purchase</a>
 </div>
 
+<!-- The following script makes the Finalise Purchase button display as none when the cart is empty -->
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const cartItems = document.querySelectorAll('.cart-item');

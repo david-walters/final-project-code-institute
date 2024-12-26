@@ -1,6 +1,23 @@
 from django.db import models
 
 class Perfume(models.Model):
+    """
+    Represents a perfume product with attributes for name, size, price, description, image URL, and gender.
+
+    Attributes:
+        SIZE_CHOICES: Available sizes for the perfume (25 ml, 50 ml, 75 ml).
+        GENDER_CHOICES: Gender options for the perfume (Male, Female).
+        name: The name of the perfume.
+        size: The size of the perfume bottle, chosen from SIZE_CHOICES.
+        price: The price of the perfume, determined by its size.
+        description: A text description of the perfume.
+        image_url: A URL to an image of the perfume.
+        gender: The target gender for the perfume, chosen from GENDER_CHOICES.
+
+    Methods:
+        save: Overrides the save method to automatically set the price based on the selected size.
+        __str__: Returns a string representation of the perfume including its name, gender, and size.
+    """
     SIZE_CHOICES = [
         ("25 ml", "25 ml"),
         ("50 ml", "50 ml"),
