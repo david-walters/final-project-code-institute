@@ -2,7 +2,7 @@
 
 ![My Django Project shown on a variety of screen sizes](media/images/readme_images/website-screenshot.png)
 
-Visit the deployed site: [Cass Galaar](https://cass-galaar-10e10382d0c4.herokuapp.com/register/)
+Visit the deployed site: [Cass Galaar](https://cass-galaar-10e10382d0c4.herokuapp.com/)
 
 ![Github last commit](https://img.shields.io/badge/Last%20Commit%20-%26December%202024%20-%20blue)
 ![GitHub contributors](https://img.shields.io/badge/Contributors%20-%201%20-%20light%20green)
@@ -52,7 +52,7 @@ Visit the deployed site: [Cass Galaar](https://cass-galaar-10e10382d0c4.herokuap
 
 ---
 
-![The Logo](events_list/static/images/logo.png)
+![The Logo](media/images/readme_images/logo.png)
 
 ## User Experience (UX)
 
@@ -87,7 +87,7 @@ The main colour theme for this site is Black and Gold — portraying the site as
 }
 ```
 
-- I have used ` color: #caa126` for headings and buttons.
+- I have used `color: #caa126` for headings and buttons.
 - I have used `color: #B8860B` for all other texts.
 - I have used `background-color: black;` for the body of each page and text that are on white background cards.
 - I have used `background-color: rgb(45, 45, 45)` for the navbar to stand out a little bit from the body
@@ -122,7 +122,15 @@ By using these fonts, we ensure that site maintains a consistent appearance acro
 
 Wireframes were created using Figma.
 
-- [Home Page]()
+- [Register Form](media/images/readme_images/wireframe-reg.png)
+- [Delivery Address Form](media/images/readme_images/wireframe-address.png)
+- [Home Page](media/images/readme_images/wireframe-home.png)
+- [Perfume Details](media/images/readme_images/wireframe-details.png)
+- [Shopping Cart](media/images/readme_images/wireframe-cart.png)
+- [Payment Success](media/images/readme_images/wireframe-payment1.png)
+- [Payment Cancelled](media/images/readme_images/wireframe-payment2.png)
+- [Login Page](media/images/readme_images/wireframe-login.png)
+- [Logout Page](media/images/readme_images/wireframe-logout.png)
 
 ### Features
 
@@ -142,7 +150,7 @@ All pages on the website are responsive and have:
 
   ![Logo](media/images/readme_images/navbar-2.png)
 
-- The nav bar with has 4 nav links for registered users: Delivery-Address, Home, Logout and a shopping cart icon.
+- The nav bar has 4 nav links for registered users: Delivery-Address, Home, Logout and a shopping cart icon.
 
   ![Logo](media/images/readme_images/navbar-4.png)
 
@@ -284,10 +292,6 @@ For the input fields on the form, I used the `label` tag with the `for` attribut
 - [**Django**](https://www.djangoproject.com/)
 
   - The project is built using **Django**, a high-level Python web framework that encourages rapid development and clean, pragmatic design. Django provides a robust set of tools for handling everything from URL routing to database management, making it the perfect framework for building scalable and secure web applications.
-
-- [**SQLite**](https://www.sqlite.org/)
-
-  - The project uses **SQLite**, a lightweight relational database management system, as the default database engine with Django. It offers simplicity and convenience during development and testing, with easy configuration and minimal setup required.
 
 - [**Jinja2**](https://jinja.palletsprojects.com/)
 
