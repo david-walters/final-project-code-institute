@@ -132,6 +132,63 @@ Wireframes were created using Figma.
 - [Login Page](media/images/readme_images/wireframe-login.png)
 - [Logout Page](media/images/readme_images/wireframe-logout.png)
 
+### Database Schema
+
+![Database Schema](media/images/readme_images/database-schema.png)
+
+1. Registration Table
+   Table Name: Registration
+   Purpose: Stores user credentials and basic information.
+
+Key Fields:
+user_id: Unique identifier for each user (Primary Key).
+username: Unique username for the user.
+password: User's password.
+email: Unique email address for user communication.
+
+2. Perfumes Table
+   Table Name: Perfumes
+   Purpose: Stores details about the perfumes available for sale.
+
+Key Fields:
+perfume_id: Unique identifier for each perfume (Primary Key).
+name: Name of the perfume.
+image_url: Link to the perfume's image.
+size: Size of the perfume.
+price: Cost of the perfume.
+
+3. Cart Table
+   Table Name: Cart
+   Purpose: Represents the user's shopping cart, linking users with the perfumes they wish to purchase.
+
+Key Fields:
+Registration.user_id: Foreign Key referencing the Registration table.
+Perfumes.image_url, Perfumes.name, Perfumes.size, Perfumes.price: These fields are included to provide context about the items in the cart.
+quantity: Number of each perfume the user wishes to purchase.
+total_price: Calculated total price based on the quantity and price of perfumes in the cart.
+
+4. Payments Table (Stripe)
+   Table Name: Payments
+   Purpose: Allows payment transactions processed through Stripe — allowing users to purchase the perfumes.
+
+Key Fields:
+Registration.user_id: Foreign Key referencing the Registration table, linking payments to users.
+Perfumes.name, Perfumes.price: Information about the perfume being purchased.
+Cart.quantity: The quantity of the perfume purchased.
+Cart.total_price: Total price for the transaction.
+
+5. Delivery Address Table
+   Table Name: Delivery_address
+   Purpose: Stores delivery information for users.
+
+Key Fields:
+Registration.user_id: Foreign Key referencing the Registration table, linking addresses to users.
+street_address: The street address for delivery.
+city: The city of the delivery address.
+post_code: The postal code for the delivery.
+country: Country of the delivery address.
+mobile_number: Contact number for delivery communication.
+
 ### Features
 
 The website is comprised of 3 main pages (Home page, Perfume details page, and Shopping cart page), along with a Registration page, Login and Logout page, Add a delivery address and Edit delivery address page, and the payment page is a link using Stipe's payment system.
@@ -448,7 +505,7 @@ I had an issue with selecting larger sizes and reflecting the total price in the
 
 ### Code Used
 
-I utilized several external resources to complete this project:
+I utilised several external resources to complete this project:
 
 - I used Bootstrap v4.6.2 for the responsive grid system, prebuilt components, and styles, which I customized to suit the needs of the project.
 
