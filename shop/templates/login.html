@@ -5,15 +5,6 @@ Login Page
 {% endblock %}
 
 {% block content %}
-{% if messages %}
-<div class="d-flex justify-content-center">
-    <ul class="messages gold-1 list-unstyled">
-        {% for message in messages %}
-        <li class="message gold-1">{{ message }}</li>
-        {% endfor %}
-    </ul>
-</div>
-{% endif %}
 <section class="form-section">
     <div class="container">
         <div class="row">
@@ -27,6 +18,15 @@ Login Page
                                 </div>
                             </div>
                         </div>
+                        {% if messages %}
+                        <div class="d-flex justify-content-center">
+                            <ul class="messages text-danger list-unstyled">
+                                {% for message in messages %}
+                                <li class="message gold-1">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
                         <form method="POST" class="form p-2">
                             {% csrf_token %}
 
