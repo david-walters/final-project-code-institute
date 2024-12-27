@@ -418,7 +418,7 @@ The hosting platform that I've used for my project is GitHub Pages and Heroku. T
 
 4. Commit the files using the `git commit -m "First commit"` command.
 
-5. Create a new repository in GitHub called 'Milestone-3-Code-Institute'.
+5. Create a new repository in GitHub called 'Final-Project-Code-Institute'.
 
 6. Copy the code with the origin that GitHub provides and paste into the terminal window:
 
@@ -473,7 +473,11 @@ To deploy the project to **Heroku** using the **Heroku GUI**, I followed these s
 
 12. Ensure that environment variables such as SECRET_KEY, DATABASE_URL, and others are set up correctly in the Settings tab by clicking Reveal Config Vars and adding the appropriate key-value pairs.
 
-13. Finally, run migrations on Heroku to create the necessary database structure:
+13. Finally, run migrations on Heroku to create the necessary database structure.
+
+14. Go to more options in Heroku, top left of the page. Click run console. And type the following command `python manage.py makemigrations && python manage.py migrate`
+
+15. The console should provide feedback on the success of your migrations.
 
 ### Local Development
 
