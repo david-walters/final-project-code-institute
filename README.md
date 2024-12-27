@@ -199,6 +199,8 @@ post_code: The postal code for the delivery.
 country: Country of the delivery address.
 mobile_number: Contact number for delivery communication.
 
+---
+
 ### Features
 
 The website is comprised of 3 main pages (Home page, Perfume details page, and Shopping cart page), along with a Registration page, Login and Logout page, Add a delivery address and Edit delivery address page, and the payment page is a link using Stipe's payment system.
@@ -522,6 +524,11 @@ I utilised several external resources to complete this project:
 - I referred to Django tutorials to properly set up the application, configure the database, and implement routing and views.
 
 - Heroku was instrumental for deployment, and I used their resources to troubleshoot issues and ensure smooth hosting for the app.
+
+### Notes For Assessors
+
+I initially started this project on a different repository but made an error when trying to correct a certain commit. I somehow kept all my commit messages but all the commits matched the last change I made. Due to approaching deadline, I had to make a new repository and begin again. So, the intial commits may seem packed in the beginning. The mistake I made was not pushing to github straight away. If you want to see initial commit messages, I have now pushed it to this repository:
+[initional-project-git-errors](https://github.com/david-walters/initional-project-git-errors-)
 
 ### Personal Overview
 
