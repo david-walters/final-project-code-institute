@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import DeliveryAddress
 from .forms import DeliveryAddressForm
 from django.contrib import messages 
 
+@login_required(login_url='login')
 def delivery_address(request):
     """
     Handle the addition of a new delivery address for the logged-in user.
@@ -30,6 +32,7 @@ def delivery_address(request):
 
     return render(request, 'delivery_address/delivery_address.html', {'form': form})
 
+@login_required(login_url='login')
 def edit_delivery_address(request):
     """
     Handle the editing of an existing delivery address for the logged-in user.
