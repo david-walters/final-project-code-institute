@@ -22,6 +22,9 @@ def register(request):
     Handles user registration. If the form is valid, creates a new user, logs them in,
     and redirects them to the delivery address page.
     """
+    if request.user.is_authenticated:
+        return redirect('index')
+    
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -41,6 +44,9 @@ def login_view(request):
     If successful, logs in the user and redirects them to the homepage.
     Otherwise, displays an error message for invalid credentials.
     """
+    if request.user.is_authenticated:
+        return redirect('index')
+    
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
